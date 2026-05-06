@@ -8,7 +8,7 @@ function init() {
   const audio = document.querySelector("audio");
   const img = document.querySelector("img");
   const div = document.getElementById("volume-controls"); 
-  const icon = document.querySelector("div img");
+  const icon = document.querySelector("#volume-controls img");
 
   //Input Variables
   const button = document.querySelector("button");
@@ -37,18 +37,19 @@ function init() {
     audio.volume = event.target.value / 100;
   }); 
 
-  icon.addEventListener("load", () => {
-    if(audio.volume <= 0){
-      icon.src =  '../assets/icons/volume-level-0.svg';
+  input.addEventListener("input", (event) => {
+    if(event.target.value <= 0){
+      icon.src = '../assets/icons/volume-level-0.svg';
     }
-    else if(audio.volume >= 0.1 && audio.volume <= 0.32){
-      icon.src =  '../assets/icons/volume-level-1.svg';
+    else if(event.target.value >= 1 && event.target.value <= 32){
+      icon.src = '../assets/icons/volume-level-1.svg';
+      console.log(icon.src);
     }
-    else if(audio.volume >= 0.33 && audio.volume <= 0.66){
-      icon.src =  '../assets/icons/volume-level-2.svg'; 
+    else if(event.target.value >= 33 && event.target.value <= 66){
+      icon.src = '../assets/icons/volume-level-2.svg'; 
     }
     else{
-      icon.src =  '../assets/icons/volume-level-3.svg';
+      icon.src = '../assets/icons/volume-level-3.svg';
     }
   });
 
