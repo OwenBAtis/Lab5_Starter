@@ -9,3 +9,6 @@ Question 1: No, you would not use a unit test to test the message feature of an 
 
 Question 2: Yes, you would use a unit test to test the max message length feature of an application. Unlike the message feature in Question 1, this is likely achieved with a smaller section of code that can be isolated, and has verifiable success and failure conditions. For example, you could test with messages of lengths 79, 80, and 81, which would result in success, success, and failure if the feature has a soft cap on message length.  
 
+Expose: https://owenbatis.github.io/Lab5_Starter/expose.html
+Explore: https://owenbatis.github.io/Lab5_Starter/explore.html 
+
